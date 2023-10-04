@@ -39,6 +39,19 @@ def main():
                         print('{:<20} {}'.format(row[0], row[1]))
                         logging.info(row[0] + ' ' + row[1])
                     input("Tekan enter")
+            elif pilih == 2:
+                hostname = input("IP Address Router Mikrotik : ")
+                username = input("Username : ")
+                password = input("Password : ")
+
+                connection = MikrotikConnection(hostname, username, password)
+                if connection.connect():
+                    print("Login berhasil!!!")
+                else:
+                    print("Login Gagal")
+                    break
+            elif pilih == 3:
+                break
         except Exception as e:
             print("Error: Input kosng atau bukan angka")
 

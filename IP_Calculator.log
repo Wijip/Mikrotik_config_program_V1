@@ -13,3 +13,13 @@ INFO:root:Subnet Mask           :  255.255.255.0
 INFO:root:Network Address       :  192.168.1.0
 INFO:root:Broadcast             :  192.168.1.255
 INFO:root:Usabel Rang           :  192.168.1.1 - 192.168.1.254
+INFO:root:IP Address            :  192.168.20.1
+INFO:root:Subnet Mask           :  255.255.255.240
+INFO:root:Network Address       :  192.168.20.0
+INFO:root:Broadcast             :  192.168.20.15
+INFO:root:Usabel Rang           :  192.168.20.1 - 192.168.20.14
+INFO:root:IP Address            :  1.1.1.1
+INFO:root:Subnet Mask           :  255.255.255.0
+INFO:root:Network Address       :  1.1.1.0
+INFO:root:Broadcast             :  1.1.1.255
+INFO:root:Usabel Rang           :  1.1.1.1 - 1.1.1.254
