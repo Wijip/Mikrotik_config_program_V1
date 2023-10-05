@@ -47,6 +47,7 @@ def show_menu(index):
         print("= 3. wireless                                                  =")
         print("= 0. Back                                                      =")
         print("================================================================")
+
     else: # KONFIGURASI -> QUEUE
         print()
 
