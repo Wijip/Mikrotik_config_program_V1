@@ -15,7 +15,3 @@ class Manual_config:
 
         else:
             print(f"IP Address {ip_address}/{subnet_mask} berhasil ditambahkan diinteface {interface}")
-
-        # finally:
-        #     print("Close")
-        #     print(result)
