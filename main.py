@@ -89,7 +89,7 @@ def main():
                         interface = input("Masukkan nama Interface : ")
                         ip_address = input("Masukkan alamat IP : ")
                         subnet_mask = input("Masukkan subnet mask : ")
-                        result = manual_config.configure_ip(interface, ip_address, subnet_mask)
+                        result = manual_config.Configure_IP(interface, ip_address, subnet_mask)
                         # print(result)
                         time.sleep(1)
                         # connection.close_connection()
