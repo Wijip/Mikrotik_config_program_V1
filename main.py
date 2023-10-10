@@ -1,4 +1,6 @@
 import os, logging
+import time
+
 from ip_calculator import IP_Calculator
 from  manual_config import Manual_config
 from mikrotik_connection import MikrotikConnection
@@ -19,7 +21,8 @@ def show_menu(index):
         print("= 2. IP                                                        =")
         print("= 3. Queue                                                     =")
         print("= 4. Firwall                                                   =")
-        print("= 5. hotspot                                                   =")
+        print("= 5. bridge                                                    =")
+        print("= 6. hotspot                                                   =")
         print("= 0. Back                                                      =")
         print("================================================================")
     elif index == 2: # KONFIGURASI -> INTERFACE
@@ -54,6 +57,14 @@ def show_menu(index):
         print("================================================================")
         print("= 1. DUMMY                                                     =")
         print("= 2. DUMMY                                                     =")
+        print("= 0. Back                                                      =")
+        print("================================================================")
+    elif index == 6:
+        print("================================================================")
+        print("=                  KONFIGURASI BRIDGE                          =")
+        print("================================================================")
+        print("= 1. Create Bridge Interface                                   =")
+        print("= 2. Add port to bridge                                        =")
         print("= 0. Back                                                      =")
         print("================================================================")
     else:
@@ -116,9 +127,12 @@ def main():
                 elif pilih == 0:
                     break
             elif index == 1:
-                if 1 <= pilih <= 5:
+                if 1 <= pilih <= 6:
                     index += pilih
                 elif pilih == 0:
+                    connection.close_connection()
+                    print("closing connection")
+                    time.sleep(1)
                     index -= 1
             elif index == 2:
                 if pilih == 1:
@@ -132,7 +146,12 @@ def main():
                     wait_for_input()
             elif index == 3:
                 if pilih == 1:
+                    manual_configuration = Manual_config(connection)
                     print("KONFIGURASI -> IP -> ADDRESS")
+                    interface = input("Masukkan nama interface (Ex ether1) : ")
+                    ip_address = input("Masukkan IP Address : ")
+                    subnet_mask = input("Masukkan Subnet range 8 - 32 : ")
+                    result = manual_configuration.configure_ip(interface, ip_address, subnet_mask)
                     wait_for_input()
                 elif pilih == 2:
                     print("KONFIGURASI -> IP -> DHCP-CLIENT")
@@ -155,6 +174,11 @@ def main():
                     print("Dummy Firewall 2")
                     wait_for_input()
             elif index == 6:
+                if pilih == 1:
+                    print("Create bridge interface")
+                elif pilih == 2:
+                    print("add port to bridge")
+            elif index == 7:
                 if pilih == 1:
                     print("Dummy Hotspot 1")
                     wait_for_input()

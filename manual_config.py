@@ -38,8 +38,11 @@ class Manual_config:
         except Exception as e:
             print("Terjadi Kesalahan",str(e))
         else:
-            print(f"IP Address {ip_address}/{subnet_mask} berhasil ditambahkan diinteface {interface}")
-
+            # print(result)
+            if not result:
+                print(f"IP Address {ip_address}/{subnet_mask} berhasil ditambahkan diinteface {interface}")
+            else:
+                print(result)
     def configure_dns(self, server):
         command = f'/ip dns set servers={server} allow-remote-requests=yes'
         try:

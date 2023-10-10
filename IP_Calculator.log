@@ -105,3 +105,23 @@ INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
 INFO:paramiko.transport:Authentication (password) successful!
 INFO:paramiko.transport:Disconnect (code 11): auth timeout
 INFO:paramiko.transport:Disconnect (code 11): auth timeout
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) failed.
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
