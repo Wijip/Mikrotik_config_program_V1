@@ -1,5 +1,7 @@
 import os, logging
 from ip_calculator import IP_Calculator
+from manual_config import Manual_config
+from mikrotik_connection import MikrotikConnection
 
 def show_menu(id):
     if id == 0: # MAIN MENU
@@ -63,8 +65,9 @@ def main():
     id = 0
     logging.basicConfig(filename='IP_Calculator.log', level=logging.INFO)
 
+
     while True:
-        os.system('cls')
+        # os.system('cls')
         show_menu(id)
         pilih = input("Masukkan Pilihan : ")
         if pilih.isdigit():
@@ -97,7 +100,15 @@ def main():
                             logging.info(row[0] + ' ' + row[1])
                     wait_for_input()
                 elif pilih == 2:
-                    id += 1
+                    hostname = input("IP Address Router Mikrotik : ")
+                    username = input("Username : ")
+                    password = input("Password : ")
+                    connection = MikrotikConnection(hostname, username, password)
+                    if connection.connect():
+                        print("Login Berhasil")
+                        id += 1
+                    else:
+                        print("Login Gagal")
                 elif pilih == 0:
                     break
             elif id == 1:
@@ -127,7 +138,9 @@ def main():
                     wait_for_input()
             elif id == 4:
                 if pilih == 1:
-                    print("KONFIGURASI -> IP -> ADDRESS")
+                    interface = input("Masukkan nama interface (Ex ether1) : ")
+                    ip_address = input("Masukkan Alamat IP : ")
+                    subnet_mask = input("Masukkan subnet range 8 - 32 (EX 16,24) : ")
                     wait_for_input()
                 elif pilih == 2:
                     print("KONFIGURASI -> IP -> DHCP-CLIENT")

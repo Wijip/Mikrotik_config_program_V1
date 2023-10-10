@@ -56,3 +56,12 @@ class Manual_config:
             result = self.connection.execute_command(command)
         except Exception as e:
             print(f"IP Pool berhasil ditambahkan dengan nama {pool_name} dengan ranges {ranges}")
+
+    def DHCP_Server(self, pool_name, interface, name_dhcp):
+        command = f'/ip dhcp-server add address-pool={pool_name} disabled=no interface={interface} lease-time=1h name={name_dhcp}'
+        try:
+            result = self.connection.execute_command(command)
+        except Exception as e:
+            print("Terjadi Kesalahan",str(e))
+        else:
+            print(f"DHCP Server berhasil ditambahkan dengan nama {name_dhcp} dan menggunakan pool {pool_name}")
