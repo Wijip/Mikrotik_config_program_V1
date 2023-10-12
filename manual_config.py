@@ -109,3 +109,39 @@ class Manual_config:
             print("Terjadi Kesalahan",str(e))
         else:
             print(f'Firewall RAW berhasil ditambahkan untuk Konten {content}')
+
+    def configure_mangle_connection(self, action, chain, comment, dst_address_list, dst_port, new_connection_mark, passthrough, protocol, src_address_list):
+        command = f'/ip firewall mangle add action={action} chain={chain} comment={comment} dst-address-list={dst_address_list} dst-port={dst_port} new-connection-mark={new_connection_mark} passthrough={passthrough} protocol={protocol} src-address-list={src_address_list}'
+        try:
+            result = self.connection.execute_command(command)
+        except Exception as e:
+            print("Terjadi Kesalahan", str(e))
+        else:
+            if not result:
+                print(f"mark connection pada firewall mangle berhasil ditambahkan dengan nama koneksi {new_connection_mark}")
+            else:
+                print(result)
+
+    def configure_mangle_packet(self, action, chain, comment, connection_mark, new_packet_mark, passthrough):
+        command = f'/ip firewall mangle add action={action} chain={chain} comment={comment} connection-mark={connection_mark} new-packet-mark={new_packet_mark} passthrough={passthrough}'
+        try:
+            result = self.connection.execute_command(command)
+        except Exception as e:
+            print("Terjadi Kesalahan",str(e))
+        else:
+            if not result:
+                print(f"Mark Paket pada firewall mangle berhasil ditambahkan dengan nama {new_packet_mark}")
+            else:
+                print(result)
+
+    def configure_address_list(self, network_address, name_list):
+        command = f'/ip firewall address-list add address={network_address} list={name_list}'
+        try:
+            result = self.connection.execute_command(command)
+        except Exception as e:
+            print("Terjadi Kesalahan",str(e))
+        else:
+            if not result:
+                print(f"IP Address list {network_address} berhasil ditambahkan dengan nama {name_list}")
+            else:
+                print(result)
