@@ -9,7 +9,10 @@ class Manual_config:
         except Exception as e:
             print("Terjadi kesalahan",str(e))
         else:
-            print(f"Interface {interface} berhasil dirubah menjadi {new_name}")
+            if not result:
+                print(f"Interface {interface} berhasil dirubah menjadi {new_name}")
+            else:
+                print(result)
 
     def create_bridge(self,name_bridge):
         command = f'/interface bridge add fast-forward=no name={name_bridge}'
@@ -18,7 +21,10 @@ class Manual_config:
         except Exception as e:
             print("Terjadi Kesalahan",str(e))
         else:
-            print(f"Interface bridge berhasil dibuat dengan nama {name_bridge}")
+            if not result:
+                print(f"Interface bridge berhasil dibuat dengan nama {name_bridge}")
+            else:
+                print(result)
 
     def add_bridge_port(self, name_bridge, interface):
         jumlah = int(input("Masukkan berapa port yang akan dimasukkan dalam interface bridge :"))

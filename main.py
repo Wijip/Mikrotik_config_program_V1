@@ -176,6 +176,9 @@ def main():
             elif index == 6:
                 if pilih == 1:
                     print("Create bridge interface")
+                    name_bridge = input("Masukkan nama interface bridge : ")
+                    result = Manual_config.create_bridge(name_bridge)
+                    wait_for_input()
                 elif pilih == 2:
                     print("add port to bridge")
             elif index == 7:
