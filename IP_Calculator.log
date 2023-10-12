@@ -132,3 +132,30 @@ INFO:root:Broadcast             :  192.168.10.127
 INFO:root:Usable Rang           :  192.168.10.1 - 192.168.10.126
 INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
 INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:IP Address            :  192.168.10.1
+INFO:root:Subnet Mask           :  255.255.255.248
+INFO:root:Network Address       :  192.168.10.0
+INFO:root:Broadcast             :  192.168.10.7
+INFO:root:Usable Rang           :  192.168.10.1 - 192.168.10.6
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:None
+INFO:root:None
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client ROSSSH)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:None
+INFO:root:None

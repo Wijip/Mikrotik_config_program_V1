@@ -29,7 +29,7 @@ def show_menu(index):
         print("================================================================")
         print("=                  KONFIGURASI INTERFACE                       =")
         print("================================================================")
-        print("= 1. bridge                                                    =")
+        print("= 1. create bridge                                             =")
         print("= 2. ethernet                                                  =")
         print("= 3. wireless                                                  =")
         print("= 0. Back                                                      =")
@@ -85,7 +85,7 @@ def main():
     index = 0
     logging.basicConfig(filename='IP_Calculator.log', level=logging.INFO)
     while True:
-        # os.system('clear')
+        os.system('cls')
         show_menu(index)
         pilih = input("Masukkan Pilihan : ")
         if pilih.isdigit():
@@ -121,9 +121,11 @@ def main():
                     password = input("Password : ")
                     connection = MikrotikConnection(hostname, username, password)
                     if connection.connect():
+                        time.sleep(2)
                         index += 1
                     else:
                         print("Login Gagal!!!")
+                        time.sleep(3)
                 elif pilih == 0:
                     break
             elif index == 1:
@@ -136,7 +138,7 @@ def main():
                     index -= 1
             elif index == 2:
                 if pilih == 1:
-                    print("KONFIGURASI -> INTERFACE -> BRIDGE")
+                    print("Create Bridge")
                     wait_for_input()
                 elif pilih == 2:
                     print("KONFIGURASI -> INTERFACE -> ETHERNET")
@@ -175,12 +177,17 @@ def main():
                     wait_for_input()
             elif index == 6:
                 if pilih == 1:
+                    manual_configuration = Manual_config(connection)
                     print("Create bridge interface")
                     name_bridge = input("Masukkan nama interface bridge : ")
-                    result = Manual_config.create_bridge(name_bridge)
+                    result = manual_configuration.create_bridge(name_bridge)
                     wait_for_input()
                 elif pilih == 2:
                     print("add port to bridge")
+                    name_bridge = input("Masukkan nama interface bridge : ")
+                    interface = input("Masukkan interface yang akan ditambahkan : ")
+                    result = manual_configuration.add_bridge_port(name_bridge,interface)
+                    wait_for_input()
             elif index == 7:
                 if pilih == 1:
                     print("Dummy Hotspot 1")

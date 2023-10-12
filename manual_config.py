@@ -1,3 +1,4 @@
+
 class Manual_config:
     def __init__(self, mikrotik_connection):
         self.connection = mikrotik_connection
@@ -27,15 +28,17 @@ class Manual_config:
                 print(result)
 
     def add_bridge_port(self, name_bridge, interface):
-        jumlah = int(input("Masukkan berapa port yang akan dimasukkan dalam interface bridge :"))
-        for i in range(jumlah):
-            command = f'/interface bridge port add bridge={name_bridge} interface={interface}'
-            try:
-                result = self.connection.execute_command(command)
-            except Exception as e:
-                print("Terjadi Kesalahan",str(e))
-            else:
+
+        command = f'/interface bridge port add bridge={name_bridge} interface={interface}'
+        try:
+            result = self.connection.execute_command(command)
+        except Exception as e:
+            print("Terjadi Kesalahan",str(e))
+        else:
+            if not result:
                 print(f"Interface {interface} berhasil ditambahkan di bridge {name_bridge}")
+            else:
+                print(result)
 
     def configure_ip(self, interface, ip_address, subnet_mask):
         command = f'/ip address add interface={interface} address={ip_address}/{subnet_mask}'
