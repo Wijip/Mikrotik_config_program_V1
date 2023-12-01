@@ -148,3 +148,4 @@ class Manual_config:
                 print(f"IP Address list {network_address} berhasil ditambahkan dengan nama {name_list}")
             else:
                 print(result)
+        return result

@@ -55,8 +55,8 @@ def show_menu(index):
         print("================================================================")
         print("=                  KONFIGURASI FIREWALL                        =")
         print("================================================================")
-        print("= 1. DUMMY                                                     =")
-        print("= 2. DUMMY                                                     =")
+        print("= 1. NAT  -                                                     =")
+        print("= 2. Address List                                              =")
         print("= 0. Back                                                      =")
         print("================================================================")
     elif index == 6:
@@ -129,7 +129,7 @@ def main():
                 elif pilih == 0:
                     break
             elif index == 1:
-                if 1 <= pilih <= 6:
+                if 1 <= pilih <= 7:
                     index += pilih
                 elif pilih == 0:
                     connection.close_connection()
