@@ -2,7 +2,7 @@ import os, logging
 import time
 
 from ip_calculator import IP_Calculator
-from  manual_config import Manual_config
+from manual_config import Manual_config
 from mikrotik_connection import MikrotikConnection
 
 
